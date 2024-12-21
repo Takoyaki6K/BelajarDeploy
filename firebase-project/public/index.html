@@ -1,0 +1,165 @@
+<!-- Complete Project Details at: https://RandomNerdTutorials.com/ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP Firebase App</title>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+
+    <script>
+    // REPLACE WITH YOUR web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyDzhWbaQjhSF0dpP_aeMVgoUmGTQKIRzuM",
+        authDomain: "esp32demo-6a83a.firebaseapp.com",
+        databaseURL: "https://esp32demo-6a83a-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "esp32demo-6a83a",
+        storageBucket: "esp32demo-6a83a.appspot.com",
+        messagingSenderId: "398842975511",
+        appId: "1:398842975511:web:47626b830aa8a2088bd35"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var database = firebase.database();
+</script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <header class="header">
+        <h1>MONITORING PENGOLAHAN RUMPUT LAUT</h1>
+    </header>
+
+    <section class="camera-container">
+        <article class="camera">
+            <h3>Camera 1</h3>
+            <div class="rectangle"></div>
+        </article>
+        <article class="camera">
+            <h3>Camera 2</h3>
+            <div class="rectangle"></div>
+        </article>
+    </section>
+    
+ 
+    <main class="container" id="main">
+        <div class="boxes">
+            <!-- Box 1 -->
+             <section>
+                 <div class="box" id="box1">
+                    <h2>SUHU MIXER</h2>
+                    <div class="box-content">
+                        <div class="value-display">
+                            <canvas id="gauge1"  width="300" height="250"></canvas>
+                        </div>
+                        <div class="status">
+                            <p>Kondisi</p>
+                            <div class="status-indicators">
+                                <div class="status-indicator">
+                                    <div class="indicator-on indicator" id="indicator-mixer-on-1">ON</div>
+                                    <span id="statusSuhuMixer"></span>
+                                </div>
+    
+                                <div class="status-indicator">
+                                    <div class="indicator-off indicator" id="indicator-mixer-off-1">OFF</div>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </section>
+           
+            <section>
+                <div class="box" id="box2">
+                    <h2>KECEPATAN MIXER</h2>
+                    <div class="box-content">
+                        <div class="value-display">
+                            <canvas id="gauge2"  width="300" height="250"></canvas>
+                        </div>
+                        <div class="status">
+                            <p>Kondisi</p>
+                            <div class="status-indicators">
+                                <div class="status-indicator">
+                                    <div class="indicator-on indicator" id="indicator-mixer-on-2">ON</div>
+                                    <span id="statusSpeedMixer"></span>
+                                    
+                                </div>
+                                <div class="status-indicator">
+                                    <div class="indicator-off indicator" id="indicator-mixer-off-2"></div>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Box 2 -->
+           
+
+            
+            <section>
+                <div class="box" id="box3">
+                <h2>SUHU OVEN</h2>
+                <div class="box-content">
+                    <div class="value-display">
+                        <canvas id="gauge3"  width="300" height="250"></canvas>
+                    </div>
+                    <div class="status">
+                        <p>Kondisi</p>
+                        <div class="status-indicators">
+                            <div class="status-indicator">
+                                <div class="indicator-on indicator" id="oven-on">ON</div>
+                                
+                                
+                            </div>
+                            <div class="status-indicator">
+                                <div class="indicator-off indicator" id="oven-off">OFF</div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </section>
+            <!-- Box 3 -->
+            
+
+        <!-- Custom Alert -->
+        <div id="customAlert" class="alert-box">
+            <div class="alert-content">
+                <div class="alert-icon">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <p id="alertMessage"></p>
+                <button id="okAlert" class="ok-btn" onclick="pauseAudio()">OK</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p id="date-time">Date and Time: <span id="live-date">Thursday, November 28, 2024 at 03:21:14 PM GMT+7</span></p>
+    </footer>
+  
+</div>
+<audio id="audio1">
+    <source  src="danger.mp3" type="audio/mpeg">
+</audio>
+
+
+    <!-- Firebase Configuration and App.js -->
+    <!-- Pastikan untuk mengganti konfigurasi Firebase di app.js dengan milik Anda sendiri -->
+    <script src="./jquery-3.7.1.min.js"></script>
+    <script src="../dist/gauge.min.js"></script>
+    <script src=""></script>
+    <script src="app.js"></script>
+</body>
+</html>
