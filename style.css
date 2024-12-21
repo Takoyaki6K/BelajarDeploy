@@ -1,0 +1,372 @@
+/* Atur tinggi penuh untuk html dan body */
+html, body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Gunakan Flexbox untuk tata letak */
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    transition: all 0.3s ease;
+    left: 0;overflow-x: hidden;
+    position: relative;
+}
+
+/* Header */
+.header {
+    margin: 0;
+    font-size: 0.6em;
+    position: sticky;
+    top: 0;
+    height: 2vh;
+    background-color: #0F61DC;
+    color: #fff;
+    z-index: 100;
+    padding: 1%;
+    text-align: center;
+    flex-shrink: 0; /* Mencegah header menyusut */
+}
+h1, h2, h3 {
+    margin: 0;
+}
+h3{
+    font-size: 1em;
+
+}
+#content{
+    margin-left: 0;
+    transition: margin-left .5s;
+}
+
+/* Container yang mengisi sisa ruang */
+.container {
+    flex: 1; /* Mengisi sisa ruang */
+    max-width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: margin-right .5s;
+}
+
+section{
+    margin: 0;
+    padding: 0;
+    width: 33%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+/* Kotak-kotak utama */
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1; /* Mengisi sisa ruang dalam container */
+    height: 40%;
+}
+
+/* Setiap kotak */
+.box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    margin: 10px 0 ;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px; /* Minimal tinggi untuk tampilan yang baik */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* .box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+} */
+
+h2, h3 {
+    margin-top: 5px;
+    color: #0F61DC;
+    font-size: 1rem;
+}
+
+.box-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.value-display {
+    display: flex;
+    align-items: baseline;
+    font-size: 2rem;
+    color: #0F61DC;
+}
+
+.value-display .unit {
+    font-size: 1.5rem;
+    margin-left: 5px;
+    color: #777;
+}
+
+.status {
+    text-align: center;
+    width: 50%;
+}
+
+.status p {
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.status-indicators {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.status-indicator {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+
+.status-indicator .indicator {
+    width: 80px;
+    height: 40px;
+    /* border-radius: 50%; */
+    border: 2px solid #333;
+    margin: 5px;
+    text-align: center;
+    align-items: center;
+    padding-top: 20px;
+    font-weight: bold ;
+    color: #D9D9D9;
+}
+.status-indicator > .indicator-on {
+    background-color: #117c00;
+}
+.status-indicator > .indicator-off {
+    background-color: #ff2020;
+}
+.status-indicator span {
+    font-size: 1rem;
+    color: #333;
+}
+/* Footer */
+footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    height: 3vh;
+    background-color: #0F61DC;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    flex-shrink: 0; /* Mencegah footer menyusut */
+}
+footer p {
+    margin: 0;
+       
+}
+  
+  .slideBtn {
+    transition: .5s;
+    position: fixed;
+    left: 0;  
+    font-size:30px;
+    cursor:pointer;
+    margin-right:10px;
+  }
+  
+/* Gaya untuk Custom Alert */
+.alert-box {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    /* border-radius: 8px; */
+    text-align: center;
+    padding: 20px;
+}
+
+.alert-content .alert-icon {
+    font-size: 100px;
+    color: #f44336;
+    margin-bottom: 20px;
+}
+
+.alert-content #alertMessage {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.alert-content .ok-btn {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.alert-content .ok-btn:hover {
+    background-color: #d32f2f;
+}
+
+
+/* Container untuk kamera */
+section.camera-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+  
+}
+
+/* Setiap artikel untuk kamera */
+article.camera {
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-size: 1.5rem;
+    margin: 0 auto;
+    justify-items: center;
+
+}
+
+.rectangle {
+    
+    width: calc(1280px/2);
+    height: 360px;
+    background: #D9D9D9;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+@media (max-width: 768px) {
+    .header{
+        padding: 20px;
+    }
+    section{
+        width: calc(1280px/2.75);
+    }
+    #chart_div, #chart_div2, #chart_div3 {
+      width: 100% ;
+      height: 100% ;
+    }
+  }
+  
+/* media screen max-width 1080 px then reduce font size 90 % */
+@media screen and (max-width: 1024px) {
+    .rectangle{
+        margin-left: 8%;
+        margin: 1% 8%;
+        border : 1px solid black;
+        width: calc(1280px/2.75);
+        height: calc(720px/2.75);
+        background: #D9D9D9;
+    }
+    .value-display {
+        font-size: 1rem;
+    }
+    .unit {
+        font-size: 1.5rem;
+    }
+}
+
+/* Responsivitas */
+@media screen and (max-width: 1024px) {
+    /* header font set to 3rem */
+    .header {
+        font-size: 0.5rem;
+        
+    }
+   
+    h1, h2{
+        margin: 1% 0;
+    }
+    section.camera-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+ 
+    }
+    .rectangle {
+        margin-left: 8%;
+        margin: 1% 8%;
+        border : 1px solid black;
+        width: calc(1280px/2.5);
+        height: calc(720px/2.5);
+        background: #D9D9D9;
+        
+    }
+    .boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 100%;
+    }
+
+    .value-display {
+        font-size: 2rem; /* Sesuaikan ukuran font untuk layar kecil */
+    }
+
+    .unit {
+        font-size: 1rem;
+    }
+
+    .status-indicators {
+        flex-direction: column;
+    }
+
+    .status-indicator {
+        margin: 5px 0;
+    }
+}
+@media screen and (max-width: 425px) {
+
+    .header{
+        width: 100%;
+    }
+    .rectangle{
+  
+        width: calc(1280px/3.5);
+        height: calc(720px/3.5);
+    }
+    .box {
+        width: 425px;
+        margin: 10px 0;
+    }
+}
